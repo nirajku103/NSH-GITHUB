@@ -1,1 +1,25 @@
 
+name: First Workflow
+
+run-name: ${{github.actor}}
+
+on: [push, pull_request]
+
+jobs:
+ linux-os:
+  runs-on: ubuntu-latest
+  steps:
+  # $GITHUB_WORKSPACE
+  - name: Checkout
+    uses: actions/checkout@v4.2.2
+  - run: echo " ubuntu -latest"
+ windows-os:
+   runs-on: windows-latest
+   steps:
+  # $GITHUB_WORKSPACE
+   - name: Checkout
+     uses: actions/checkout@v4.2.2
+   - run: echo " windows -latest"   
+
+
+    
